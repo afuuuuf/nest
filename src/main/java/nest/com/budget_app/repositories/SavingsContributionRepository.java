@@ -11,7 +11,7 @@ import org.springframework.data.repository.query.Param;
 
 public interface SavingsContributionRepository extends JpaRepository<SavingsContribution, UUID> {
 
-  Optional<SavingsContribution> findByIdAndGoal_IdAndDeletedAtIsNull(UUID id, UUID goalId);
+  Optional<SavingsContribution> findByIdAndGoal_Id(UUID id, UUID goalId);
 
   List<SavingsContribution> findByGoal_IdOrderByContributedAtDescCreatedAtDesc(UUID goalId);
 

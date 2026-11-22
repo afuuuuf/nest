@@ -131,9 +131,10 @@ public class SavingsServiceImpl implements SavingsService {
         .orElseThrow(() -> new NotFoundException(GOAL_NOT_FOUND));
   }
 
-  private SavingsContribution getSavingsContributionByIdAndGoalId(UUID contributionId, UUID goalId) {
+  private SavingsContribution getSavingsContributionByIdAndGoalId(
+      UUID contributionId, UUID goalId) {
     return savingsContributionRepository
-        .findByIdAndGoal_IdAndDeletedAtIsNull(contributionId, goalId)
+        .findByIdAndGoal_Id(contributionId, goalId)
         .orElseThrow(() -> new NotFoundException(CONTRIBUTION_NOT_FOUND));
   }
 
