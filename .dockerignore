@@ -1,0 +1,22 @@
+# Build output (the Dockerfile builds its own)
+target/
+out/
+
+# Version control
+.git/
+.gitignore
+.gitattributes
+
+# IDE files
+.idea/
+.vscode/
+*.iml
+
+# Secrets and local config
+.env
+.env.*
+
+# Docs and CI (not needed in the image)
+HELP.md
+README.md
+.github/
