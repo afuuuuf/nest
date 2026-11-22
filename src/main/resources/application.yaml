@@ -1,0 +1,28 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /v1
+
+spring:
+  application:
+    name: budget-app
+  datasource:
+    url: jdbc:postgresql://localhost:5433/budget-app-springboot
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+  jackson:
+    deserialization:
+      fail-on-unknown-properties: true
+    property-naming-strategy: SNAKE_CASE
+
+jwt:
+  secret: ${JWT_SECRET}
+  algorithm: HS256
