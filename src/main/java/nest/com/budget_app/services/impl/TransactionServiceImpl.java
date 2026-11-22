@@ -40,7 +40,8 @@ public class TransactionServiceImpl implements TransactionService {
 
   @Override
   public List<TransactionDto> getTransactions(UUID userId) {
-    List<Transaction> transactionList = transactionRepository.findAllByUser_IdAndDeletedAtIsNull(userId);
+    List<Transaction> transactionList =
+        transactionRepository.findAllByUser_IdAndDeletedAtIsNull(userId);
     return transactionMapper.toDtos(transactionList);
   }
 
